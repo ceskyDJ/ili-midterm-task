@@ -123,5 +123,5 @@ mdadm --manage /dev/md0 --remove /dev/loop0 >>$log_file 2>&1
 log_action "Inserting device /dev/loop4 to RAID1..."                                                                                                                                                                                  
 mdadm --manage /dev/md0 --add /dev/loop4 >>$log_file 2>&1                                                                                                                                                                             
                                                                                                                                                                                                                                       
-sleep 5 # Recovery of RAID1 takes some time...                                                                                                                                                                                        
+sleep 5 >>$log_file 2>&1 # Recovery of RAID1 takes some time...                                                                                                                                                                                        
 cat /proc/mdstat | log_info "State of RAID devices after changes:"
